@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title></title>
+    <style>
+      ul {
+        float: left;
+        margin: 30px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("a").click(function () {
+          $("img").attr("src", $(this).attr("href"));
+          return false; //href의 페이지 이동을 막는다
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="../jq_img/cute_dog.jpg">사진1</a></li>
+      <li><a href="../jq_img/img_girl.jpg">사진2</a></li>
+    </ul>
+    <img />
+    <!-- <img src="../jq_img/cute_dog.jpg"> -->
+  </body>
+</html>

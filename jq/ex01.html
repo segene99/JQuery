@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>실행 순서</title>
+    <!-- 다운로드 방식 : 제이쿼리 라이브러리 파일을 직접 내려 받아 html에 불러오는 방식임. -->
+    <script src="js/3.5.1/jquery_3.5.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        alert("$(document).ready ALERT 경고창");
+      });
+
+      window.onload = function () {
+        //가장 빠른 실행. 즉시실행 함수
+        alert("window.onload ALERT 경고창");
+      };
+
+      $(function () {
+        alert("$(function(){}) ALERT 경고창");
+      });
+    </script>
+  </head>
+  <body>
+    본문내 알림 글자를 띄웁니다.
+  </body>
+</html>

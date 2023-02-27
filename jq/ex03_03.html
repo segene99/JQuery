@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/3.5.1/jquery_3.5.1.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function exeFnc() {
+        // text("변경할 내용") : 해당 요소의 콘텐츠
+        // (가장 최종적인 인라인요소=텍스트 포함)를 변경할 내용으로 바꾼다.
+        // $("#divBox1 li:first").text("첫번째 내용");
+        // $("#divBox1 li:last").text("마지막 내용");
+
+        // $("#divBox2 li:first-of-type").css({ "background-color": "#ff0" });
+        // $("#divBox2 li:last-of-type").css({ "background-color": "#0ff" });
+
+        $("#divBox3 p:first-of-type").css({ "background-color": "green" });
+        $("#divBox3 p:last-of-type").css({ "background-color": "yellow" });
+
+        // $("li:first").text("첫번째 내용");
+        // $("li:last").text("마지막 내용");
+
+        // $("li:first-of-type").css({ "background-color": "#ff0" });
+        // $("li:last-of-type").css({ "background-color": "#0ff" });
+        $("button").hide();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="divBox1">
+      <h1>탐색 선택자</h1>
+      <ul>
+        <li>
+          <p>1-1</p>
+          <img src="../img/cellphone.jpg" width="150" />
+        </li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+      </ul>
+      <ul>
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+      </ul>
+    </div>
+    <div id="divBox2">
+      <h1>탐색 선택자</h1>
+      <ul>
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+      </ul>
+      <ul>
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+      </ul>
+    </div>
+    <div id="divBox3">
+      <h1>탐색 선택자</h1>
+      <ul>
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+      </ul>
+      <ul>
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+      </ul>
+    </div>
+    <br />
+    <button onclick="exeFnc()">제이쿼리 적용하기</button>
+  </body>
+</html>

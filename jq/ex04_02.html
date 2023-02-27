@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title></title>
+    <script>
+      function bFnc() {
+        var $goLink = $("#link");
+        // $goLink => <a href="#none" id="link">버튼1</a>
+        // console.log($goLink.attr("href"));
+        // console.log($goLink.prop("href"));
+
+        var $goLink = $(".link");
+        // $goLink => <a href="https://www.naver.com" id="link">버튼2</a>
+        // console.log($goLink.attr("href"));
+        // console.log($goLink.prop("href"));
+
+        var $goLink = $("#amove");
+        // $goLink => <a href="#none" id="amove">이동1</a>
+        // $goLink.attr("href", "https://www.google.com");
+
+        var $goLink = $(".amove");
+        // ($goLink) => (
+        //   <a href="https://www.naver.com" class="amove">
+        //     이동2
+        //   </a>
+        // );
+        $goLink.prop("href", "#none");
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="#none" id="link">버튼1</a>
+      <a href="https://www.naver.com" class="link">버튼2</a>
+      <a href="#none" id="amove">이동1</a>
+      <a href="https://www.naver.com" class="amove">이동2</a>
+      <br /><br /><button onclick="bFnc()">적용하기</button>
+    </p>
+  </body>
+</html>

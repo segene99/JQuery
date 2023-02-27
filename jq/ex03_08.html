@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title>Document</title>
+    <script>
+      $(function () {
+        $("p:first").css("color", "green");
+        //1번 선택자:
+        //   => <p>p태그1 : <span>p태그1 안의 span태그</span></p>
+        $("p:first").css("color", "green").next().css("color", "red");
+        //2번 선택자:
+        //   => <p>p태그1의 동생 p태그2: <span>p태그2 안의 span태그</span></p>
+        $("p:first")
+          .css("color", "green")
+          .next()
+          .css("color", "red")
+          .next()
+          .css({ color: "aqua", "font-weight": "bolder" })
+          .end()
+          .children("span")
+          .css({ color: "blue", "font-weight": "bolder" });
+        //3번 선택자 :
+        //   =><p>p태그3</p>
+      });
+    </script>
+  </head>
+  <body>
+    <p>p태그1 : <span>p태그1 안의 span태그</span></p>
+    <p>p태그1의 동생 : <span>p태그2 안의 span태그</span></p>
+    <p>p태그3</p>
+  </body>
+</html>

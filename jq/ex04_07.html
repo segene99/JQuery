@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title></title>
+    <script>
+      $(function () {
+        $("input[name=val_test]").focus();
+        // keyup() : 키보드로 입력하자마자 이벤트 실행
+        // $("input")
+        //   .not("#kInp")
+        //   .keyup(function () {
+        //     var value = $(this).val();
+        //     report(value);
+        //   });
+        // $("button").click(function () {
+        //   $("input").not("#kInp").val("button으로 새로운 값 설정"); //
+        // });
+        // function report(msg) {
+        //   $("#res").text(msg);
+        // }
+
+        // $("input[name=user_id]").on("keyup focus", function () {
+        //   console.log("키보드를 눌렀다 떼었을 때\n포커스가 생성이 되었을 때 이벤트 발생");
+        // });
+        // $("input[name=user_id]").on({
+        //   keyup: function () {
+        //     console.log("키보드를 눌렀다 떼엇을 때 이벤트 발생");
+        //   },
+        //   focus: function () {
+        //     console.log("포커스가 생성이 되었을 때 이벤트 발생");
+        //   },
+        // });
+
+        $("#kInp").keydown(function (e) {
+          console.log(e);
+          var a = e.keycode;
+          alert("키보드 코드값은:" + a);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>reset</button>
+    <input type="text" name="val test" value="val 메소드" size="50" />
+    <input type="text" name="user_id" />
+    <input type="text" id="kInp" />
+    <div id="res"></div>
+  </body>
+</html>
