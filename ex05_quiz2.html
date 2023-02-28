@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title>이벤트 객체2</title>
+    <style>
+      body {
+        font-family: helvetica;
+      }
+
+      span {
+        background-color: yellow;
+      }
+    </style>
+    <script>
+      $(function () {
+        $(document).on("wheel", function (event) {
+          var wheel = event.originalEvent.wheelDelta;
+          //   console.log(wheel);
+          //   console.log(wSize);
+          var wSize = $("img").width() + wheel;
+
+          if (wSize <= 250) {
+            wSize = 250;
+          } else if (wSize >= 1500) {
+            wSize = 1500;
+          } else {
+            //없음...
+          }
+
+          $("img").css({ width: wSize + "px" });
+        });
+
+        $(document).on("mousedown", function (event) {
+          var mWhich = event.which;
+          console.log(mWhich);
+
+          if ((mWhich = 2)) {
+            var wSize = $("img").width("546");
+          } else {
+            var wSize;
+          }
+
+          $("img").css({ width: wSize + "px" });
+          //   $("img").css({ height: hSize + "px" });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>마우스 휠 조작</h1>
+    <p>휠 위로: <span>확대, </span> 휠 클릭: <span> 100%</span>, 휠 아래로: <span>축소</span></p>
+    <div>
+      <img src="../img/cute_dog.jpg" />
+    </div>
+  </body>
+</html>

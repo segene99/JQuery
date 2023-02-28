@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title>이벤트 객체</title>
+    <style></style>
+    <script>
+      $(function () {
+        var fSize = 546;
+        $(".zBtn .btn").on("click", zInOut);
+
+        function zInOut() {
+          if ($(this).hasClass("zOut")) {
+            // this는 click한 대상
+            if (fSize <= 100) return false;
+            fSize--;
+          } else if ($(this).hasClass("zIn")) {
+            if (fSize >= 1000) return false;
+            fSize++;
+          } else {
+            fSize = 546;
+          }
+
+          $("body img").css({ width: fSize + "px" });
+          $("body img").css({ height: fSize + "px" });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <p class="zBtn">
+      <button class="btn zOut">-</button>
+      <button class="btn originBtn">100%</button>
+      <button class="btn zIn">+</button>
+    </p>
+    <div>
+      <img src="../img/cute_dog.jpg" />
+    </div>
+  </body>
+</html>

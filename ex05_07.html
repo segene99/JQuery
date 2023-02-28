@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../jq/js/3.5.1/jquery_3.5.1.js"></script>
+    <title></title>
+    <script>
+      $(function () {
+        var arr1 = ["서울", "대전", "부산", "대구"];
+        var arr2 = ["korea", "USA", "Japan", "Brazil"];
+        var obj = { name: "오부장", area: "부산" };
+
+        //inArray(value, array) : 배열에 해당 값이 있으면 해당 요소의 인덱스 반환
+        var arrIdx = $.inArray("부산", arr1);
+        // var arrIdx = $.inArray("경주", arr1); //-1
+        console.log("부산 인덱스 번호: " + arrIdx);
+
+        //isArray(array) : 배열 객체인지 아닌지의 여부 판단. boolean으로 값 반환
+        var okArray1 = $.isArray(arr1); //true
+        var okArray2 = $.isArray(obj); //false
+        console.log("okArray1객체는 " + (okArray1 == true ? "배열이야" : "배열아니야"));
+        console.log("okArray2객체는 " + (okArray2 == true ? "배열이야" : "배열아니야"));
+
+        // merge(배열1, 배열2) : 배열1배열에 배열2배열을 모두 붙여서 배열1을 새로운 배열로 반환함. 중복값 제거안됨. 순서는 배열1이 먼저 이후 배열2가 나중으로 정렬됨.
+        $.merge(arr2, arr1);
+        console.log(arr2);
+
+        // 요소선택자.index(선택요소) : 요소선택자에 해당되는 요소에서 선택요소에 해당되는 요소의 인덱스 번호를 반환함.(0부터)
+        var idxNum = $("li").index($("#list3"));
+        console.log(idxNum);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>배열 관련 메서드</h1>
+    <ul>
+      <li>내용1</li>
+      <li>내용2</li>
+      <li id="list3">내용3</li>
+      <li>내용4</li>
+    </ul>
+  </body>
+</html>
